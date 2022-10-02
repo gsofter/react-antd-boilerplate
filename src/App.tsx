@@ -1,16 +1,20 @@
-import React from "react";
-import { Layout } from "antd";
-import "antd/dist/antd.min.css";
-
-const { Header, Footer, Content } = Layout;
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import 'antd/dist/antd.min.css';
+import Login from './pages/login';
+import Dashboard from './pages/dashboard';
 
 function App() {
   return (
-    <Layout>
-      <Header>Header</Header>
-      <Content style={{ padding: "0 50px" }}>Content</Content>
-      <Footer>Footer</Footer>
-    </Layout>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
